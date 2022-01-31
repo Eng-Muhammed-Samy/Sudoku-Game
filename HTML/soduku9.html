@@ -1,78 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- mobile status bar color -->
-    <meta name="theme-color" content="#fff">
+    <meta name="theme-color" content="#fff" />
     <title>Sudoku</title>
     <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap"
+      rel="stylesheet"
+    />
     <!-- icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!--  css -->
-    <link rel="stylesheet" href="../CSS/sudoku9.css">
+    <link rel="stylesheet" href="../CSS/sudoku9.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- main -->
     <div class="main">
-
-        <!-- top nav -->
-        <nav>
-            <div class="nav-container">
-                <a href="#" class="nav-logo">
-                Sudoku
-            </a>
-                <div class="user_loginname">
-                    <i class="fa fa-user"></i>
-                    <span>yasmine</span>
-                </div>
-            </div>
-        </nav>
-        <!-- end top nav -->
-        <div class="info">
-            <ul class="game-status">
-                <li>
-                    <div class="vertical-adjust">
-                        <span class="material-icons"><i class="fa fa-clock-o"></i></span>
-                        <span id="timer-label">Time</span>
-                    </div>
-                    <div class="div-val" id="timer">00:00</div>
-                </li>
-                <li>
-                    <div class="vertical-adjust">
-                        <span class="material-icons"><i class="fa fa-wifi"></i></span>
-                        <span id="game-difficulty-label">Game difficulty</span>
-                    </div>
-                    <div id="game-difficulty" class="div-val">Easy</div>
-                </li>
-                <li class="start-game">
-
-                    <span>Start game</span>
-                </li>
-            </ul>
-
+      <!-- top nav -->
+      <nav>
+        <div class="nav-container">
+          <a href="#" class="nav-logo"> Sudoku </a>
+          <div class="user_loginname">
+            <i class="fa fa-user"></i>
+            <span>yasmine</span>
+          </div>
         </div>
-        <!-- game screen -->
-        <div class="game-box">
-            <div class="card game">
-                <table id="puzzle-grid">
-                </table>
+      </nav>
+      <!-- end top nav -->
+      <div class="info">
+        <ul class="game-status">
+          <li>
+            <div class="vertical-adjust">
+              <span class="material-icons"><i class="fa fa-clock-o"></i></span>
+              <span id="timer-label">Time</span>
             </div>
-            <div class="card status ">
-                <ul class="images ">
-                </ul>
+            <div class="div-val" id="timer">00:00</div>
+          </li>
+          <li>
+            <div class="vertical-adjust">
+              <span class="material-icons"><i class="fa fa-wifi"></i></span>
+              <span id="game-difficulty-label">Game difficulty</span>
             </div>
+            <div id="game-difficulty" class="div-val">Easy</div>
+          </li>
+          <li class="start-game">
+            <span>Start game</span>
+          </li>
+        </ul>
+      </div>
+      <!-- game screen -->
+      <div class="game-box">
+        <div class="card game">
+          <table id="puzzle-grid"></table>
         </div>
+        <div class="card status">
+          <ul class="images"></ul>
+        </div>
+      </div>
     </div>
     <!-- end main -->
     <script src="../js/soduku9.js "></script>
-</body>
-
+  </body>
 </html>
