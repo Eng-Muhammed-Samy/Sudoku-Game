@@ -3,11 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+main{
+  height: 100vh;
+}
 body {
   font-family: "Potta One", cursive;
-  overflow: hidden;
-  height: 100vh;
 }
 
 /*start nav*/
@@ -54,6 +54,8 @@ a {
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
+
 }
 
 .card {
@@ -69,8 +71,7 @@ a {
 
 .status {
   margin-left: 50px;
-  padding-top: 10px;
-  padding: 10px;
+  border: 0px;
 }
 
 /* table grid style*/
@@ -84,7 +85,6 @@ a {
   align-items: center;
 }
 .images {
-  padding: 10px 0;
   display: flex;
   flex-direction: column;
 }
@@ -120,12 +120,30 @@ td {
   display: block;
   width: 57px;
   height: 57px;
-  border: 1px solid rgba(0, 0, 0, 0.45);
   border-radius: 10px;
-  margin: 1px;
+  margin: 1.5px;
+  position: relative;
+  cursor: pointer;
+}
+.images  li div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(65, 65, 122, 0.44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color:#ffffff ;
+  border-radius: 10px;
+}
+.images  li div p{
+  border-radius: 10px;
 }
 .images li:nth-child(3n) {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 /* info div style*/
 
@@ -221,12 +239,60 @@ img {
     width: 50px;
     height: 50px;
   }
+  .game-box {
+    flex-direction: column-reverse;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .images {
+    flex-direction: row;
+    padding: 0 10px ;
+  }
+  .images li:nth-child(3n) {
+    margin-right: 5px;
+  }
+
+  
+.status {
+  margin-left: 0px;
+  margin-bottom: 5px;
+  margin-top: 25px;
+
+}
+.div-val{
+  font-size: 18px;
+}
+.game-status li {
+  font-size: 15px;
+}
 }
 @media (max-width: 720px) {
   .images li,
   td {
     width: 45px;
     height: 45px;
+  }
+  .game-box {
+    flex-direction: column-reverse;
+  }
+  .images {
+    flex-direction: row;
+    padding: 0 10px ;
+  }
+  .images li:nth-child(3n) {
+    margin-right: 5px;
+  }
+  .status {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+   
+  }
+  .div-val{
+    font-size: 18px;
+  }
+  .game-status li {
+    font-size: 15px;
   }
 }
 
@@ -235,5 +301,27 @@ img {
   td {
     width: 40px;
     height: 40px;
+  }
+  .game-box {
+    flex-direction: column-reverse;
+  }
+  .images {
+    flex-direction: row;
+    padding: 0 10px ;
+  }
+  .images li:nth-child(3n) {
+    margin-right: 5px;
+  }
+  .status {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+   
+  }
+  .div-val{
+    font-size: 18px;
+  }
+  .game-status li {
+    font-size: 15px;
   }
 }
