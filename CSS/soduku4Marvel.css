@@ -9,10 +9,6 @@
   height: 100vh;
 } */
 
-.body {
-  background-image: url("../images/backgrounds/marvel.png");
-}
-
 /* Table grid */
 
 #Grid {
@@ -22,10 +18,10 @@
   border-collapse: separate;
   border-spacing: 10px 5px;
   align-items: center;
-  box-shadow: 5px 5px 200px rgb(155, 1, 14);
+  /* box-shadow: 5px 5px 200px rgb(155, 1, 14); */
   border: 2px red;
   border-radius: 20px;
-  background-color: rgba(66, 11, 11, 0.267);
+  background-color: rgba(0, 0, 0, 0.342);
 }
 
 td {
@@ -39,9 +35,11 @@ td {
   cursor: pointer;
   background-color: rgba(14, 0, 212, 0.35);
   transition: width 0.3s, height 0.3s, background-color 1s, box-shadow 1s;
+  /* transition: scale 0.3s; */
 }
 
 td:hover {
+  /* transform: scale(1.05); */
   width: 125px;
   height: 125px;
   background-color: rgba(230, 4, 4, 0.35);
