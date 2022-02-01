@@ -214,11 +214,11 @@ a {
   font-family: bold;
   font-family: "Potta One", cursive;
   color: #ffff;
-  border-radius: 20px;
-  background-image: linear-gradient(40deg, black, red);
-  box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px,
+  border-radius: 15px;
+  /* background-image: linear-gradient(40deg, black, red); */
+  /* box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.5) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.65) 0px -2px 6px 0px inset;
+    rgba(10, 37, 64, 0.65) 0px -2px 6px 0px inset; */
   cursor: pointer;
   transform: scale(0.8);
   transition: all 0.2s ease-out;
@@ -229,11 +229,11 @@ a {
 }
 
 .game-status .start-game span:hover {
-  background-image: linear-gradient(30deg, red, black);
+  /* background-image: linear-gradient(30deg, red, black); */
   font-size: 1.4rem;
   transform: scale(0.9);
-  transition-duration: 1s ease-out;
-  box-shadow: #030557 0px 25px 35px -13px;
+  /* transition-duration: 1s ease-out; */
+  /* box-shadow: #030557 0px 25px 35px -13px; */
   border-radius: 15px;
   color: #ffffeb;
   border: 0.1px #6e0175;
@@ -257,6 +257,11 @@ i {
   color: #fa0000;
   font-size: 28px;
   padding: 4px;
+  margin-left: 35px;
+}
+
+#timer {
+  margin-left: -2px;
 }
 
 /* Media query */
