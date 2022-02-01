@@ -185,7 +185,12 @@ a {
 }
 
 .game-status .start-game {
+  margin-top: 20px;
   text-align: right;
+}
+
+#btn-hide {
+  display: unset;
 }
 
 @keyframes backgroundColorPalette {
@@ -261,7 +266,7 @@ i {
 }
 
 #timer {
-  margin-left: -2px;
+  margin-left: 22px;
 }
 
 /* Media query */
@@ -293,6 +298,7 @@ i {
   .div-val {
     font-size: 18px;
   }
+
   .game-status li {
     font-size: 15px;
   }

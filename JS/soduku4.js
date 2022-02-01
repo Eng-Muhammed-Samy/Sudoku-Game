@@ -27,7 +27,7 @@ const imagesGenerator = (size) => {
     imageImg.setAttribute(
       "src",
       `../images/page2Images/group4/${i + 1}.png`,
-      "alt",
+      +"alt",
       "Not Found"
     );
     imageLi.appendChild(imageImg);
@@ -38,3 +38,14 @@ const imagesGenerator = (size) => {
 
 gridGenerator(4);
 imagesGenerator(4);
+
+let time = 60;
+function onTimer() {
+  document.getElementById("timer").innerHTML = time;
+  time--;
+  if (time < 0) {
+    alert("Time finished!");
+  } else {
+    setTimeout(onTimer, 1000);
+  }
+}
