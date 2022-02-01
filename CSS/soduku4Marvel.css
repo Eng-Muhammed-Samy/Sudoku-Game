@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Potta One", cursive;
 }
 
 /* .container {
@@ -24,13 +25,8 @@
   box-shadow: 5px 5px 200px rgb(155, 1, 14);
   border: 2px red;
   border-radius: 20px;
-  background-color: rgba(17, 15, 15, 0.24);
-  /* transition: border 2s; */
+  background-color: rgba(66, 11, 11, 0.267);
 }
-
-/* #Grid :hover {
-  border: 2px white;
-} */
 
 td {
   border: 1px solid rgb(255, 255, 255);
@@ -42,18 +38,18 @@ td {
   margin: 1px;
   cursor: pointer;
   background-color: rgba(14, 0, 212, 0.35);
-  transition: width 0.3s, height 0.3s, background-color 1s;
+  transition: width 0.3s, height 0.3s, background-color 1s, box-shadow 1s;
 }
 
 td:hover {
   width: 125px;
   height: 125px;
   background-color: rgba(230, 4, 4, 0.35);
+  box-shadow: 3px -2px 3px rgba(255, 255, 255, 0.3);
 }
 
 #Grid tr:nth-child(2n) td {
   border-bottom: 4px solid crimson;
-  transition: 2s;
 }
 
 #Grid tr:nth-child(2n + 1) td {
@@ -71,8 +67,8 @@ td:hover {
 /* Images columan */
 
 .gameContainer {
-  margin-top: 200px;
-  margin-left: 100px;
+  margin-top: 160px;
+  margin-left: 150px;
   margin-right: auto;
   margin-bottom: auto;
   display: flex;
@@ -82,7 +78,6 @@ td:hover {
 
 .colImages {
   width: fit-content;
-  font-family: "Potta One", cursive;
 }
 
 .imagesSection {
@@ -137,6 +132,133 @@ img {
   border-radius: 10px;
 }
 
+/*start nav*/
+
+nav {
+  background-image: linear-gradient(70deg, rgba(58, 11, 11, 0.651), red);
+  color: white;
+  width: 100%;
+  box-shadow: 5px 2px 30px rgba(20, 4, 233, 0.822);
+  margin-bottom: 20px;
+}
+.nav-container {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.user-loginname {
+  font-size: 70px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.fa-user {
+  color: white;
+  font-size: 20px;
+}
+
+/* info div style */
+
+.game-status {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-status li {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+}
+
+.game-status .start-game {
+  text-align: right;
+}
+
+@keyframes backgroundColorPalette {
+  0% {
+    background: red;
+  }
+  25% {
+    background: blue;
+  }
+  50% {
+    background: red;
+  }
+  75% {
+    background: blue;
+  }
+  100% {
+    background: red;
+  }
+}
+
+.game-status .start-game span {
+  margin: 0px;
+  display: flex;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  font-family: bold;
+  font-family: "Potta One", cursive;
+  color: #ffff;
+  border-radius: 20px;
+  background-image: linear-gradient(40deg, black, red);
+  box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.5) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.65) 0px -2px 6px 0px inset;
+  cursor: pointer;
+  transform: scale(0.8);
+  transition: all 0.2s ease-out;
+  animation-name: backgroundColorPalette;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.game-status .start-game span:hover {
+  background-image: linear-gradient(30deg, red, black);
+  font-size: 1.4rem;
+  transform: scale(0.9);
+  transition-duration: 1s ease-out;
+  box-shadow: #030557 0px 25px 35px -13px;
+  border-radius: 15px;
+  color: #ffffeb;
+  border: 0.1px #6e0175;
+  -webkit-tap-highlight-color: transparent;
+  animation-play-state: paused;
+}
+
+.vertical-adjust span {
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  color: rgba(9, 13, 247);
+}
+
+i {
+  color: #405392;
+  font-size: 10px;
+}
+
+.div-val {
+  color: #fa0000;
+  font-size: 28px;
+  padding: 4px;
+}
+
 /* Media query */
 
 @media (max-width: 1000px) {
@@ -170,6 +292,7 @@ img {
     font-size: 15px;
   }
 }
+
 @media (max-width: 720px) {
   .imagesSection li,
   td {
@@ -199,7 +322,7 @@ img {
   }
 }
 
-@media (max-width: 650) {
+@media (max-width: 650px) {
   .imagesSection li,
   td {
     width: 40px;
