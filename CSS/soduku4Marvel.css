@@ -21,7 +21,7 @@
   border-collapse: separate;
   border-spacing: 10px 5px;
   align-items: center;
-  box-shadow: 5px 5px 14px rgb(155, 1, 14);
+  box-shadow: 5px 5px 200px rgb(155, 1, 14);
   border: 2px red;
   border-radius: 20px;
   background-color: rgba(17, 15, 15, 0.24);
@@ -92,8 +92,8 @@ td:hover {
 
 .imagesSection li {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 6em;
+  height: 6em;
   border-radius: 10px;
   margin: 1.5px;
   position: relative;
@@ -102,8 +102,8 @@ td:hover {
   transition: width 0.3s, height 0.3s, background-color 1s;
 }
 .imagesSection li:hover {
-  width: 115px;
-  height: 115px;
+  width: 7em;
+  height: 7em;
   background-color: rgba(4, 19, 230, 0.35);
 }
 
