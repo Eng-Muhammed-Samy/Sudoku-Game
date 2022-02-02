@@ -1,0 +1,361 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Potta One", cursive;
+}
+
+/* .container {
+  height: 100vh;
+} */
+
+/* Table grid */
+
+#Grid {
+  padding: 10px;
+  border-spacing: 1;
+  transition: all 0.5s;
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+  align-items: center;
+  /* box-shadow: 5px 5px 200px rgb(155, 1, 14); */
+  border: 2px red;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.342);
+}
+
+td {
+  border: 1px solid rgb(255, 255, 255);
+  text-align: center;
+  vertical-align: middle;
+  width: 114px;
+  height: 114px;
+  border-radius: 10px;
+  margin: 1px;
+  cursor: pointer;
+  background-color: rgba(14, 0, 212, 0.35);
+  transition: width 0.3s, height 0.3s, background-color 1s, box-shadow 1s;
+  /* transition: scale 0.3s; */
+}
+
+td:hover {
+  /* transform: scale(1.05); */
+  width: 125px;
+  height: 125px;
+  background-color: rgba(230, 4, 4, 0.35);
+  box-shadow: 3px -2px 3px rgba(255, 255, 255, 0.3);
+}
+
+#Grid tr:nth-child(2n) td {
+  border-bottom: 4px solid crimson;
+}
+
+#Grid tr:nth-child(2n + 1) td {
+  border-top: 4px solid white;
+}
+
+#Grid td:nth-child(2n) {
+  border-right: 4px solid crimson;
+}
+
+#Grid td:nth-child(2n + 1) {
+  border-left: 4px solid white;
+}
+
+/* Images columan */
+
+.gameContainer {
+  margin-top: 160px;
+  margin-left: 150px;
+  margin-right: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colImages {
+  width: fit-content;
+}
+
+.imagesSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagesSection li {
+  display: block;
+  width: 6em;
+  height: 6em;
+  border-radius: 10px;
+  margin: 1.5px;
+  position: relative;
+  margin-left: 50px;
+  cursor: pointer;
+  transition: width 0.3s, height 0.3s, background-color 1s;
+}
+.imagesSection li:hover {
+  width: 7em;
+  height: 7em;
+  background-color: rgba(4, 19, 230, 0.35);
+}
+
+.imagesSection li div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 240, 240, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.imagesSection li div p {
+  border-radius: 10px;
+}
+
+.imagesSection li:nth-child(2n) {
+  margin-bottom: 6px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/*start nav*/
+
+nav {
+  background-image: linear-gradient(70deg, rgba(58, 11, 11, 0.651), red);
+  color: white;
+  width: 100%;
+  box-shadow: 5px 2px 30px rgba(20, 4, 233, 0.822);
+  margin-bottom: 20px;
+}
+.nav-container {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.user-loginname {
+  font-size: 70px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.fa-user {
+  color: white;
+  font-size: 20px;
+}
+
+/* info div style */
+
+.game-status {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-status li {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+}
+
+.game-status .start-game {
+  margin-top: 20px;
+  text-align: right;
+}
+
+#btn-hide {
+  display: unset;
+}
+
+@keyframes backgroundColorPalette {
+  0% {
+    background: red;
+  }
+  25% {
+    background: blue;
+  }
+  50% {
+    background: red;
+  }
+  75% {
+    background: blue;
+  }
+  100% {
+    background: red;
+  }
+}
+
+.game-status .start-game span {
+  margin: 0px;
+  display: flex;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  font-family: bold;
+  font-family: "Potta One", cursive;
+  color: #ffff;
+  border-radius: 15px;
+  /* background-image: linear-gradient(40deg, black, red); */
+  /* box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.5) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.65) 0px -2px 6px 0px inset; */
+  cursor: pointer;
+  transform: scale(0.8);
+  transition: all 0.2s ease-out;
+  animation-name: backgroundColorPalette;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.game-status .start-game span:hover {
+  /* background-image: linear-gradient(30deg, red, black); */
+  font-size: 1.4rem;
+  transform: scale(0.9);
+  /* transition-duration: 1s ease-out; */
+  /* box-shadow: #030557 0px 25px 35px -13px; */
+  border-radius: 15px;
+  color: #ffffeb;
+  border: 0.1px #6e0175;
+  -webkit-tap-highlight-color: transparent;
+  animation-play-state: paused;
+}
+
+.vertical-adjust span {
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  color: rgba(9, 13, 247);
+}
+
+i {
+  color: #405392;
+  font-size: 10px;
+}
+
+.div-val {
+  color: #fa0000;
+  font-size: 28px;
+  padding: 4px;
+  margin-left: 35px;
+}
+
+#timer {
+  margin-left: 22px;
+}
+
+/* Media query */
+
+@media (max-width: 1000px) {
+  .imagesSection li,
+  td {
+    width: 50px;
+    height: 50px;
+  }
+  .gameContainer {
+    flex-direction: column-reverse;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .imagesSection {
+    flex-direction: row;
+    padding: 0 10px;
+  }
+  .imagesSection li:nth-child(2n) {
+    margin-right: 5px;
+  }
+
+  .status {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+  }
+  .div-val {
+    font-size: 18px;
+  }
+
+  .game-status li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 720px) {
+  .imagesSection li,
+  td {
+    width: 45px;
+    height: 45px;
+  }
+  .gameContainer {
+    flex-direction: column-reverse;
+  }
+  .imagesSection {
+    flex-direction: row;
+    padding: 0 10px;
+  }
+  .imagesSection li:nth-child(2n) {
+    margin-right: 5px;
+  }
+  .status {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  .div-val {
+    font-size: 18px;
+  }
+  .game-status li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  .imagesSection li,
+  td {
+    width: 40px;
+    height: 40px;
+  }
+  .gameContainer {
+    flex-direction: column-reverse;
+  }
+  .imagesSection {
+    flex-direction: row;
+    padding: 0 10px;
+  }
+  .imagesSection li:nth-child(2n) {
+    margin-right: 5px;
+  }
+  .status {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  .div-val {
+    font-size: 18px;
+  }
+  .game-status li {
+    font-size: 15px;
+  }
+}
