@@ -7,6 +7,11 @@
     <!-- mobile status bar color -->
     <meta name="theme-color" content="#fff" />
     <title>Sudoku</title>
+    <link
+      rel="shortcut icon"
+      href="../images/page2Images/icon.png"
+      type="image/x-icon"
+    />
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +25,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <!--  css -->
-    <link rel="stylesheet" href="../CSS/sudoku9.css" />
+    <link rel="stylesheet" href="../CSS/mainGame.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
@@ -33,7 +38,7 @@
           <a href="#" class="nav-logo"> Sudoku </a>
           <div class="user_loginname">
             <i class="fa fa-user"></i>
-            <span>yasmine</span>
+            <span id="player_game">yasmine</span>
           </div>
         </div>
       </nav>
@@ -62,7 +67,7 @@
       <!-- game screen -->
       <div class="game-box">
         <div class="card game">
-          <table id="puzzle-grid"></table>
+          <table class="puzzle-grid" id="table" ></table>
         </div>
         <div class="card status">
           <ul class="images"></ul>
@@ -70,6 +75,6 @@
       </div>
     </div>
     <!-- end main -->
-    <script src="../js/soduku9.js "></script>
+    <script src="../js/mainGame.js "></script>
   </body>
 </html>
