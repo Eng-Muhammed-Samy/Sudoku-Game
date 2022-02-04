@@ -1,3 +1,10 @@
+window.onload=function(){
+  if (sessionStorage.getItem('login') == null)       
+  {
+      //show validation message
+      window.location.href = "../index.html"
+  }
+}
 let audio = document.querySelector("audio");
 document.getElementById("btnplayMusic").addEventListener("click", () => {
   if (audio.paused) {
@@ -25,13 +32,16 @@ const generateGroup = (num, path) => {
 };
 
 // fill groups
-const createGroup = (groupName) => {
+const createGroup = (groupName,groupnum) => {
+  var query=location.search;
   let parentdev = document.createElement("div");
+  parentdev.setAttribute("id", "parent");
   let group = generateGroup(4, groupName);
-  let button = document.createElement("button");
+  let button = document.createElement("a");
   button.innerHTML = "Select";
   button.setAttribute("id", groupName);
   button.setAttribute("class", "myButton");
+  button.setAttribute("href","mainGame.html"+query+"&"+"group="+groupnum );
   let div = document.createElement("div");
   div.setAttribute("class", "group");
   div.classList.add(groupName);
@@ -45,20 +55,10 @@ const addGroupsToContainer = (numOfGroups) => {
   for (let i = 0; i < numOfGroups; i++) {
     document
       .getElementsByClassName("container")[0]
-      .appendChild(createGroup(`group${i + 1}`));
+      .appendChild(createGroup(`group${i + 1}`,`${i+1}`));
   }
 };
 
 addGroupsToContainer(4);
 
-// some body style
 
-// (function () {
-//   setInterval(() => {
-//     let red = Math.floor(Math.random() * 255);
-//     let green = Math.floor(Math.random() * 255);
-//     let blue = Math.floor(Math.random() * 255);
-//     document.body.style.backgroundColor =
-//       "rgb(" + red + "," + green + "," + blue + ")";
-//   }, 1000);
-// })();

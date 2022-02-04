@@ -1,3 +1,4 @@
+
 * {
   padding: 0;
   margin: 0;
@@ -50,23 +51,20 @@ a {
 /*end nav*/
 
 .game-box {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-
+ 
 }
 
 .card {
-  background: #fff;
   width: fit-content;
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .game {
-  align-items: center;
-  background-color: rgb(255, 255, 255);
+  border-radius:5px ;
 }
 
 .status {
@@ -76,13 +74,19 @@ a {
 
 /* table grid style*/
 
-#puzzle-grid {
+.puzzle-grid,.puzzle-grid2 {
   padding: 10px;
   border-spacing: 1;
   transition: all 0.5s;
   border-collapse: separate;
   border-spacing: 10px 5px;
   align-items: center;
+  background-image: url("../images/1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+ 
 }
 .images {
   display: flex;
@@ -96,24 +100,42 @@ td {
   height: 57px;
   border-radius: 10px;
   margin: 1px;
+  background-color: rgba(179, 175, 241, 0.35);
 }
-
-#puzzle-grid tr:nth-child(3n) td {
+.puzzle-grid2 td{
+  width: 67px;
+  height: 67px;
+}
+.puzzle-grid tr:nth-child(3n) td {
   border-bottom: 4px solid #5d4092;
 }
 
-#puzzle-grid tr:nth-child(3n + 1) td {
+.puzzle-grid tr:nth-child(3n+ 1) td {
   border-top: 4px solid #5d4092;
 }
 
-#puzzle-grid td:nth-child(3n) {
+.puzzle-grid td:nth-child(3n) {
   border-right: 4px solid #5d4092;
 }
 
-#puzzle-grid td:nth-child(3n + 1) {
+.puzzle-grid td:nth-child(3n + 1) {
   border-left: 4px solid #5d4092;
 }
+.puzzle-grid2  tr:nth-child(2n) td {
+  border-bottom: 4px solid #5d4092;
+}
 
+.puzzle-grid2 tr:nth-child(2n+ 1) td {
+  border-top: 4px solid #5d4092;
+}
+
+.puzzle-grid2 td:nth-child(2n) {
+  border-right: 4px solid #5d4092;
+}
+
+.puzzle-grid2 td:nth-child(2n + 1) {
+  border-left: 4px solid #5d4092;
+}
 /*images list style*/
 
 .images li {
@@ -190,7 +212,6 @@ td {
   border-radius: 15px;
   color: #ffffeb;
   border: 0.1px #6e0175;
-  /*   font-family:"Monaco" */
   -webkit-tap-highlight-color: transparent;
   animation-play-state: paused;
 }
@@ -215,15 +236,16 @@ i {
 
 /*active class to selected td*/
 
-/* td.active {
-    box-shadow: 0px 9px 4px -6px grey;
+ td.active {
+    box-shadow: 0px 9px 6px -6px rgb(255, 255, 255),9px 0px 6px -6px rgb(255, 255, 255);
     cursor: pointer;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
-    transform: scaleZ(3);
-    transform: scaleX(1.1);
-    transform: scaleY(1.1);
-} */
+    transform: scaleZ(6);
+    transform: scaleX(1.2);
+    transform: scaleY(1.2);
+    background-color: rgba(64, 60, 112, 0.35);
+} 
 
 /*image style */
 
