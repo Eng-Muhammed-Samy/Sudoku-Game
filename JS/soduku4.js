@@ -49,3 +49,71 @@ function onTimer() {
     setTimeout(onTimer, 1000);
   }
 }
+
+// function byClass(syntax) {
+//   return document.getElementsByClassName(syntax);
+// }
+
+let disableSelect = false;
+var iselectNum = null;
+var gselectNum = null;
+// Images columan selection
+for (
+  let i = 0;
+  i < document.getElementsByClassName("imagesSection")[0].children.length;
+  i++
+) {
+  document
+    .getElementsByClassName("imagesSection")[0]
+    .children[i].addEventListener("click", function () {
+      if (!disableSelect) {
+        if (this.classList.contains("iselected")) {
+          this.classList.remove("iselected");
+          iselectNum = null;
+        } else {
+          for (
+            let i = 0;
+            i <
+            document.getElementsByClassName("imagesSection")[0].children.length;
+            i++
+          ) {
+            document
+              .getElementsByClassName("imagesSection")[0]
+              .children[i].classList.remove("iselected");
+          }
+          this.classList.add("iselected");
+          iselectNum = 1;
+        }
+      }
+    });
+}
+
+// Grid selection
+for (let i = 0; i < document.getElementById("Grid").children.length; i++) {
+  for (let j = 0; j < document.getElementById("Grid").children.length; j++) {
+    document
+      .getElementById("Grid")
+      .children[i].children[j].addEventListener("click", function () {
+        if (!disableSelect) {
+          if (this.classList.contains("gselected")) {
+            this.classList.remove("gselected");
+            gselectNum = null;
+          } else {
+            for (
+              let i = 0;
+              i < document.getElementById("Grid").children.length;
+              i++
+            ) {
+              document
+                .getElementById("Grid")
+                .children[i].children[j].classList.remove("selected");
+            }
+            if (gselectNum == null) {
+              this.classList.add("gselected");
+              gselectNum = 1;
+            }
+          }
+        }
+      });
+  }
+}

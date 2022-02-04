@@ -92,12 +92,24 @@ td:hover {
   position: relative;
   margin-left: 50px;
   cursor: pointer;
-  transition: width 0.3s, height 0.3s, background-color 1s;
+  transition: all 1s;
 }
 .imagesSection li:hover {
   width: 7em;
   height: 7em;
   background-color: rgba(4, 19, 230, 0.35);
+}
+.iselected {
+  width: 10em;
+  height: 10em;
+  background-color: rgba(4, 19, 230, 0.35);
+}
+
+.gselected {
+  width: 125px;
+  height: 125px;
+  background-color: rgba(230, 4, 4, 0.35);
+  box-shadow: 3px -2px 3px rgba(255, 255, 255, 0.3);
 }
 
 .imagesSection li div {
