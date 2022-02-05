@@ -1,4 +1,6 @@
 export class SudokuOperation {
+
+
     
 checkArrayGroup(array, number) {
 
@@ -21,9 +23,25 @@ checkRowOfArray(array, number) {
 	  }
   }
  
-  return false 
+  return false;
 
 }
+
+
+ checkCoulmnOfArray(array,number){
+
+	let len = 0;
+	for(let colNum = 0 ; colNum < array[len].length ; colNum++){
+		for( let rowNum = 0 ; rowNum<array.length;rowNum++){
+			 if (array[rowNum][colNum]== number)
+			 return true; 
+		}			
+	}
+
+	
+	return false;
+}
+
 
 
 
