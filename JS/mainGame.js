@@ -1,7 +1,7 @@
 var r = document.querySelector(":root");
-var hr = location.href;
+var href = location.href;
 let arr;
-var active;
+let active;
 let key;
 const table = getById("table");
 const ul_images = getByClass("images")[0];
@@ -24,8 +24,8 @@ window.onload = function () {
   }
 };
 
-function split_data(hr) {
-  arr = hr.slice(hr.indexOf("?") + 1).split("&");
+function GetDataFromHref(href) {
+  arr = href.slice(href.indexOf("?") + 1).split("&");
   for (var i = 0; i < arr.length; i++) {
     if (i == 0) {
       arr[i] = arr[i].split("=")[1].split("+").join(" ");
@@ -34,8 +34,9 @@ function split_data(hr) {
     }
   }
 }
-split_data(hr);
+GetDataFromHref(href);
 
+//variables to deal with grid
 const USER_NAME = arr[0];
 const LEVEL = parseInt(arr[1]); // 4 9
 const GROUP = parseInt(arr[2]); //1  2 3 4
@@ -54,7 +55,7 @@ const GenerateMainGid = (size) => {
   }
 };
 
-const Generatelis = (size, groupnum) => {
+const GenerateImages = (size, groupnum) => {
   for (let i = 0; i < size; i++) {
     let li = document.createElement("li");
     let transparent_dev = document.createElement("div");
@@ -78,13 +79,13 @@ function myFunction_set(num) {
 }
 myFunction_set(LEVEL / 2);
 GenerateMainGid(LEVEL);
-Generatelis(LEVEL, GROUP);
+GenerateImages(LEVEL, GROUP);
 
 var disableSelect = false;
 var iselectNum = null;
 var gselectNum = null;
 
-$(document).keydown(function (e) {
+document.addEventListener("keydown",function (e) {
   key = parseInt(e.key);
   active = $("td.active").removeClass("active");
   var x = active.index();
