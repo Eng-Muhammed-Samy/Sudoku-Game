@@ -14,33 +14,33 @@ checkArrayGroup(array, number) {
 
 }
 
-checkRowOfArray(array, number) {
 
-  for (let index = 0 ; index<array.length; index++){
-	  for(let j = 0 ; j<array[index].length;j++){
-		  if (array[index][j]==number)
-			 return true;
-	  }
+checkRowOfArray(array,number,rownumber) {
+
+	for (let index = rownumber ; index<array.length; index++){
+		for(let j = 0 ; j<array[index].length;j++){
+			if (array[rownumber][j]==number)
+			   return true;
+		}
+	}
+   
+	return false;
+  
   }
- 
-  return false;
+  
+ checkCoulmnOfArray(array,number,colNumber){
 
-}
-
-
- checkCoulmnOfArray(array,number){
-
-	let len = 0;
-	for(let colNum = 0 ; colNum < array[len].length ; colNum++){
 		for( let rowNum = 0 ; rowNum<array.length;rowNum++){
-			 if (array[rowNum][colNum]== number)
+			 if (array[rowNum][colNumber]== number)
 			 return true; 
 		}			
-	}
+
 
 	
 	return false;
 }
+  
+
 
 
 
