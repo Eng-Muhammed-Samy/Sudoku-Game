@@ -50,24 +50,30 @@
               <span class="material-icons"><i class="fa fa-clock-o"></i></span>
               <span id="timer-label">Time</span>
             </div>
-            <div class="div-val" id="timer">00:00</div>
+            <div class="div-val" id="timer">
+              <span id="minute">00</span>:<span id="second">00</span>
+            </div>
           </li>
           <li>
             <div class="vertical-adjust">
               <span class="material-icons"><i class="fa fa-wifi"></i></span>
               <span id="game-difficulty-label">Game difficulty</span>
             </div>
-            <div id="game-difficulty" class="div-val">Easy</div>
+            <select id="game-difficulty" class="div-val">
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
           </li>
           <li class="start-game">
-            <span>Start game</span>
+            <button class="btn-start">Start game</button>
           </li>
         </ul>
       </div>
       <!-- game screen -->
       <div class="game-box">
         <div class="card game">
-          <table class="puzzle-grid" id="table" ></table>
+          <table class="puzzle-grid" id="table"></table>
         </div>
         <div class="card status">
           <ul class="images"></ul>
@@ -75,6 +81,9 @@
       </div>
     </div>
     <!-- end main -->
+    <script src="../js/Constant.js "></script>
     <script src="../js/mainGame.js "></script>
+    <script src="../js/sudokuOperation.js "></script>
+    <script src="../js/app.js "></script>
   </body>
 </html>

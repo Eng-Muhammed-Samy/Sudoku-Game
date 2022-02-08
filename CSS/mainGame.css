@@ -1,10 +1,9 @@
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-main{
+main {
   height: 100vh;
 }
 body {
@@ -13,6 +12,10 @@ body {
 
 /*start nav*/
 
+#game-difficulty {
+  width: 100%;
+  font-size: 20px;
+}
 nav {
   background-image: linear-gradient(40deg, #d38cff, #6272fc);
   color: white;
@@ -55,7 +58,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 
 .card {
@@ -64,7 +66,7 @@ a {
 }
 
 .game {
-  border-radius:5px ;
+  border-radius: 5px;
 }
 
 .status {
@@ -74,7 +76,8 @@ a {
 
 /* table grid style*/
 
-.puzzle-grid,.puzzle-grid2 {
+.puzzle-grid,
+.puzzle-grid2 {
   padding: 10px;
   border-spacing: 1;
   transition: all 0.5s;
@@ -86,7 +89,6 @@ a {
   background-position: center;
   background-size: cover;
   border-radius: 5px;
- 
 }
 .images {
   display: flex;
@@ -102,7 +104,7 @@ td {
   margin: 1px;
   background-color: rgba(179, 175, 241, 0.35);
 }
-.puzzle-grid2 td{
+.puzzle-grid2 td {
   width: 67px;
   height: 67px;
 }
@@ -110,7 +112,7 @@ td {
   border-bottom: 4px solid #5d4092;
 }
 
-.puzzle-grid tr:nth-child(3n+ 1) td {
+.puzzle-grid tr:nth-child(3n + 1) td {
   border-top: 4px solid #5d4092;
 }
 
@@ -121,11 +123,11 @@ td {
 .puzzle-grid td:nth-child(3n + 1) {
   border-left: 4px solid #5d4092;
 }
-.puzzle-grid2  tr:nth-child(2n) td {
+.puzzle-grid2 tr:nth-child(2n) td {
   border-bottom: 4px solid #5d4092;
 }
 
-.puzzle-grid2 tr:nth-child(2n+ 1) td {
+.puzzle-grid2 tr:nth-child(2n + 1) td {
   border-top: 4px solid #5d4092;
 }
 
@@ -147,7 +149,7 @@ td {
   position: relative;
   cursor: pointer;
 }
-.images  li div{
+.images li div {
   position: absolute;
   top: 0;
   left: 0;
@@ -158,10 +160,10 @@ td {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color:#ffffff ;
+  color: #ffffff;
   border-radius: 10px;
 }
-.images  li div p{
+.images li div p {
   border-radius: 10px;
 }
 .images li:nth-child(3n) {
@@ -185,13 +187,15 @@ td {
   text-align: right;
 }
 
-.game-status .start-game span {
+.game-status .start-game .btn-start {
   margin: 0px;
   display: flex;
   padding: 10px 20px;
   font-size: 1.4rem;
   font-family: bolder;
   font-family: "Monaco";
+  border: none;
+  outline: none;
   color: #ffff;
   border-radius: 20px;
   background-image: linear-gradient(40deg, #d38cff, #6272fc);
@@ -202,8 +206,12 @@ td {
   transform: scale(0.8);
   transition: all 0.2s ease-out;
 }
+.err {
+  background-color: red;
+  color: white;
+}
 
-.game-status .start-game span:hover {
+.game-status .start-game .btn-start:hover {
   background-image: linear-gradient(30deg, #f5b6b3, #6272fc);
   font-size: 1.4rem;
   transform: scale(0.9);
@@ -212,11 +220,9 @@ td {
   border-radius: 15px;
   color: #ffffeb;
   border: 0.1px #6e0175;
-  -webkit-tap-highlight-color: transparent;
-  animation-play-state: paused;
 }
 
-.vertical-adjust span {
+.vertical-adjust .btn-start {
   line-height: 20px;
   display: inline-block;
   vertical-align: middle;
@@ -232,20 +238,22 @@ i {
   color: #5d4092;
   font-size: 28px;
   padding: 4px;
+  width: 100px;
 }
 
 /*active class to selected td*/
 
- td.active {
-    box-shadow: 0px 9px 6px -6px rgb(255, 255, 255),9px 0px 6px -6px rgb(255, 255, 255);
-    cursor: pointer;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-    transform: scaleZ(6);
-    transform: scaleX(1.2);
-    transform: scaleY(1.2);
-    background-color: rgba(64, 60, 112, 0.35);
-} 
+td.active {
+  box-shadow: 0px 9px 6px -6px rgb(255, 255, 255),
+    9px 0px 6px -6px rgb(255, 255, 255);
+  cursor: pointer;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  transform: scaleZ(6);
+  transform: scaleX(1.2);
+  transform: scaleY(1.2);
+  background-color: rgba(64, 60, 112, 0.35);
+}
 
 /*image style */
 
@@ -268,25 +276,23 @@ img {
   }
   .images {
     flex-direction: row;
-    padding: 0 10px ;
+    padding: 0 10px;
   }
   .images li:nth-child(3n) {
     margin-right: 5px;
   }
 
-  
-.status {
-  margin-left: 0px;
-  margin-bottom: 5px;
-  margin-top: 25px;
-
-}
-.div-val{
-  font-size: 18px;
-}
-.game-status li {
-  font-size: 15px;
-}
+  .status {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+  }
+  .div-val {
+    font-size: 18px;
+  }
+  .game-status li {
+    font-size: 15px;
+  }
 }
 @media (max-width: 720px) {
   .images li,
@@ -299,7 +305,7 @@ img {
   }
   .images {
     flex-direction: row;
-    padding: 0 10px ;
+    padding: 0 10px;
   }
   .images li:nth-child(3n) {
     margin-right: 5px;
@@ -308,9 +314,8 @@ img {
     margin-left: 0px;
     margin-bottom: 5px;
     margin-top: 15px;
-   
   }
-  .div-val{
+  .div-val {
     font-size: 18px;
   }
   .game-status li {
@@ -329,7 +334,7 @@ img {
   }
   .images {
     flex-direction: row;
-    padding: 0 10px ;
+    padding: 0 10px;
   }
   .images li:nth-child(3n) {
     margin-right: 5px;
@@ -338,12 +343,43 @@ img {
     margin-left: 0px;
     margin-bottom: 5px;
     margin-top: 15px;
-   
   }
-  .div-val{
+  .div-val {
     font-size: 18px;
   }
   .game-status li {
     font-size: 15px;
+  }
+}
+
+.cell-err {
+  animation: zoom-out-shake 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoom-out-shake {
+  0% {
+    transform: scale(2);
+  }
+  25% {
+    transform: scale(2) rotate(30deg);
+  }
+  50% {
+    transform: scale(2) rotate(-30deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation: zoom-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
   }
 }
