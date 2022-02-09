@@ -1,10 +1,10 @@
-let cells = document.getElementsByTagName("td");
+let cells = document.querySelectorAll("td");
 let x2 = document.querySelector("#game-difficulty");
 let selected_cell;
 let su = undefined;
 let su_answer = undefined;
 let start_btn = document.getElementsByClassName("btn-start")[0];
-let active;
+let active=0;
 let key;
 let active_cell;
 const clearSudoku = () => {
@@ -56,7 +56,7 @@ const checkErr = (value) => {
     }
   };
 
-  let index = selected_cell - 1;
+  let index = selected_cell;
 
   let row = Math.floor(index / GRID_SIZE);
   let col = index % GRID_SIZE;
@@ -77,7 +77,7 @@ const checkErr = (value) => {
   }
 
   step = GRID_SIZE;
-  while (index + step < 16) {
+  while (index + step < Math.pow(GRID_SIZE,2)) {
     addErr(cells[index + step]);
     step += GRID_SIZE;
   }
@@ -95,7 +95,7 @@ const checkErr = (value) => {
   }
 };
 const removeErr = () =>
-  Array.from(cells).forEach((e) => e.classList.remove("err"));
+ cells.forEach((e) => e.classList.remove("err"));
 const isGameWin = () => sudokuCheck(su_answer);
 start_btn.onclick = function () {
   start_btn.disabled = true;
@@ -109,6 +109,7 @@ start_btn.onclick = function () {
     let x = active.index();
     let y = active.closest("tr").index();
     if (e.keyCode == 37) {
+      
       x--;
     }
     if (e.keyCode == 38) {
@@ -120,11 +121,13 @@ start_btn.onclick = function () {
     if (e.keyCode == 40) {
       y++;
     }
+    
     active = $("tr").eq(y).find("td").eq(x).addClass("active");
     active_cell = getByClass("active")[0];
     selected_cell = Array.from(
       active_cell.parentElement.parentElement.getElementsByTagName("td")
     ).indexOf(active_cell);
+
     if (key >= 1 && key <= GRID_SIZE) {
       if (!active_cell.classList.contains("filled")) {
         active_cell.innerHTML = `<img src="../images/page2images/group${GROUP}/${key}.png"/>`;
@@ -143,8 +146,7 @@ start_btn.onclick = function () {
 
         // check game win
         if (isGameWin()) {
-          removeGameInfo();
-          showResult();
+          console.log("win");
         }
       }
     }
