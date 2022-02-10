@@ -1,19 +1,27 @@
 let cells = document.querySelectorAll("td");
 let x2 = document.querySelector("#game-difficulty");
-let selected_cell;
 let su = undefined;
 let su_answer = undefined;
 let start_btn = document.getElementsByClassName("btn-start")[0];
 let active=0;
-let key;
 let active_cell;
+
+// function to clear soduku grid from any element attribute and images content
 const clearSudoku = () => {
+  active=0;
   for (let i = 0; i < Math.pow(GRID_SIZE, 2); i++) {
     cells[i].innerHTML = "";
     cells[i].classList.remove("filled");
+    cells[i].classList.remove("err");
+    cells[i].classList.remove("cell-err");
+    cells[i].classList.remove("zoom-in");
+    cells[i].classList.remove("active");
+    cells[i].classList.remove("filled");
+    cells[0].classList.add("active");
   }
 };
 
+// function to initiate soduku grid with random images according to game level 
 const initSudoku = () => {
   let Celes =
     x2.value == "Easy"
@@ -45,18 +53,20 @@ const initSudoku = () => {
   }
 };
 
+//function to checkError
 const checkErr = (value) => {
-  const addErr = (cell) => {
-    if (parseInt(cell.getAttribute("data-value")) === value) {
-      cell.classList.add("err");
-      cell.classList.add("cell-err");
-      setTimeout(() => {
-        cell.classList.remove("cell-err");
-      }, 500);
-    }
-  };
+// function to add error styling to cells
+const addErr = (cell) => {
+  if (parseInt(cell.getAttribute("data-value")) === value) {
+    cell.classList.add("err");
+    cell.classList.add("cell-err");
+    setTimeout(() => {
+      cell.classList.remove("cell-err");
+    }, 500);
+  }
+};
 
-  let index = selected_cell;
+  let index = active;
 
   let row = Math.floor(index / GRID_SIZE);
   let col = index % GRID_SIZE;
@@ -94,65 +104,72 @@ const checkErr = (value) => {
     step += 1;
   }
 };
+// function to remove err
 const removeErr = () =>
  cells.forEach((e) => e.classList.remove("err"));
+
+
+ // function to check if user win
 const isGameWin = () => sudokuCheck(su_answer);
-start_btn.onclick = function () {
+
+
+// add Eventlistener to start_btn
+start_btn.addEventListener("click",function () {
+
   start_btn.disabled = true;
+  x2.disabled = true;
+
   initSudoku();
   timerStart();
-  x2.disabled = true;
-  document.addEventListener("keydown", function (e) {
-    key = parseInt(e.key);
-    active = $("td.active").removeClass("active");
 
-    let x = active.index();
-    let y = active.closest("tr").index();
-    if (e.keyCode == 37) {
-      
-      x--;
+ 
+  window.onkeydown = function(e){
+    var key = parseInt(e.key);
+    var kc = e.keyCode;
+  
+    var rows = GRID_SIZE;
+    var columns = GRID_SIZE;
+    if (kc == 37) { //move left or wrap
+        active = (active>0)?active-1:active;
     }
-    if (e.keyCode == 38) {
-      y--;
+    if (kc == 38) { // move up
+        active = (active-columns>=0)?active-columns:active;
     }
-    if (e.keyCode == 39) {
-      x++;
+    if (kc == 39) { // move right or wrap
+       active = (active<(columns*rows)-1)?active+1:active;
     }
-    if (e.keyCode == 40) {
-      y++;
+    if (kc == 40) { // move down
+        active = (active+columns<=(rows*columns)-1)?active+columns:active;
     }
     
-    active = $("tr").eq(y).find("td").eq(x).addClass("active");
+    $('.active').removeClass('active');
+    $('#table tr td').eq(active).addClass('active');
     active_cell = getByClass("active")[0];
-    selected_cell = Array.from(
-      active_cell.parentElement.parentElement.getElementsByTagName("td")
-    ).indexOf(active_cell);
-
     if (key >= 1 && key <= GRID_SIZE) {
       if (!active_cell.classList.contains("filled")) {
         active_cell.innerHTML = `<img src="../images/page2images/group${GROUP}/${key}.png"/>`;
         active_cell.setAttribute("data-value", key);
         // add to answer
-        let row = Math.floor(selected_cell / GRID_SIZE);
-        let col = selected_cell % GRID_SIZE;
+        let row = Math.floor(active / GRID_SIZE);
+        let col = active % GRID_SIZE;
         su_answer[row][col] = key;
         // -----
         removeErr();
         checkErr(key);
-        cells[selected_cell].classList.add("zoom-in");
+        cells[active].classList.add("zoom-in");
         setTimeout(() => {
-          cells[selected_cell].classList.remove("zoom-in");
+          cells[active].classList.remove("zoom-in");
         }, 500);
 
         // check game win
-        if (isGameWin()) {
-          console.log("win");
-        }
+    console.log(isGameWin()) ;
       }
     }
-  });
-};
+  };
+});
 
+
+// function to start time
 const timerStart = () => {
   const minutes = document.getElementById("minute");
   const seconds = document.getElementById("second");
