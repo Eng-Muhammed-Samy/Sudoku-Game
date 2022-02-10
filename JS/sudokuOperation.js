@@ -1,14 +1,12 @@
+// this is a function to greate the grid deoent on level if leve 1=> arr 4*4 else arr 9*9 and initiate its val with zero
 const newGrid = (size) => {
   let arr = new Array(size);
-
   for (let i = 0; i < size; i++) {
     arr[i] = new Array(size);
   }
-
   for (let i = 0; i < Math.pow(size, 2); i++) {
     arr[Math.floor(i / size)][i % size] = UN_ASSIGHNED;
   }
-
   return arr;
 };
 
@@ -36,9 +34,10 @@ const isBoxSafe = (grid, box_row, box_col, value) => {
     }
   }
   return true;
+
 };
 
-// check in row, col and 3x3 box
+// check in row, col and  box
 const isSafe = (grid, row, col, value) => {
   return (
     isColSafe(grid, col, value) &&
@@ -65,7 +64,6 @@ const findUnassignedPos = (grid, pos) => {
 // shuffle arr
 const shuffleArray = (arr) => {
   let curr_index = arr.length;
-
   while (curr_index !== 0) {
     let rand_index = Math.floor(Math.random() * curr_index);
     curr_index -= 1;
@@ -74,7 +72,6 @@ const shuffleArray = (arr) => {
     arr[curr_index] = arr[rand_index];
     arr[rand_index] = temp;
   }
-
   return arr;
 };
 
@@ -87,6 +84,7 @@ const isFullGrid = (grid) => {
   });
 };
 
+// this function is used to create the grid and initiate it with random images and validate coreect positions of them
 const sudokuCreate = (grid) => {
   let unassigned_pos = {
     row: -1,
@@ -96,7 +94,6 @@ const sudokuCreate = (grid) => {
   if (!findUnassignedPos(grid, unassigned_pos)) return true;
 
   let number_list = shuffleArray([...NUMBERS]);
-
   let row = unassigned_pos.row;
   let col = unassigned_pos.col;
 
@@ -111,39 +108,37 @@ const sudokuCreate = (grid) => {
           return true;
         }
       }
-
       grid[row][col] = UN_ASSIGHNED;
     }
   });
-
   return isFullGrid(grid);
 };
 
-const sudokuCheck = (grid) => {
-  let unassigned_pos = {
-    row: -1,
-    col: -1,
-  };
-  if (!findUnassignedPos(grid, unassigned_pos)) return true;
-  grid.forEach((row, i) => {
-    row.forEach((num, j) => {
-      if (isSafe(grid, i, j, num)) {
-        if (isFullGrid(grid)) {
-          return true;
-        } else {
-          if (sudokuCreate(grid)) {
-            return true;
-          }
+// this is the function used to check if user win after full grid
+function checkwin(matrix) {
+  let count=0;
+  for(let num=0;num<NUMBERS.length;num++)
+  {
+        for(let i=0;i<matrix.length;i++)
+        {
+            for(let j=0;j<matrix[i].length;j++)
+            {
+                if(NUMBERS[num]===matrix[i][j])
+                {
+                    ++count;
+                }
+            }
         }
-      }
-    });
-  });
+        if(count>GRID_SIZE) return false;
+        else count=0;
+  }
+  return true;
+}
 
-  return isFullGrid(grid);
-};
-
+//this is a function used to select random images when create grid
 const rand = () => Math.floor(Math.random() * GRID_SIZE);
 
+// thiis is used to free cells depend on level (easy , medium,hard)
 const removeCells = (grid, level) => {
   let res = [...grid];
   let attemps = level;
@@ -166,11 +161,7 @@ const sudokuGen = (level) => {
   let check = sudokuCreate(sudoku);
   if (check) {
     let question = removeCells(sudoku, level);
-
-    return {
-      original: sudoku,
-      question: question,
-    };
+    return  question;
   }
   return undefined;
 };

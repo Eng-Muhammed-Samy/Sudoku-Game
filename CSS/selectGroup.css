@@ -19,7 +19,7 @@ header {
 }
 header div i {
   font-size: 50px;
-  color: rgb(1, 146, 182);
+  color: rgb(70, 1, 182);
   transition: color 0.5s ease;
 }
 header div i:hover {
