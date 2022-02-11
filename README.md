@@ -1,22 +1,23 @@
 # **Sudoku-Game**
 
 ---
-
-**<h3 style="color:orange; font-family:tahoma;">Sudoku</h3>** is a logic-based, combinatorial number-placement puzzle. In classic sudoku, the objective is to fill a 9 × 9 grid with digits so that each column, each row, and each of the nine 3 × 3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contain all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution.
-
+```diff
+!Sudoku is a logic-based, combinatorial number-placement puzzle. In classic sudoku, the objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid also called boxes, blocks, or regions contain all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution.
+```
 ---
 
 ## Overview
 
 This project is a simple Sudoku game, that was developed by using mainly Javascript, HTML5, and CSS3 tools.
 
-The main goal is to make a Sudoku game for kids with the main rule of original Sudoku.
+The main goal is to make a Sudoku game for kids with the main rules of the original Sudoku game profile:
 
 - Instead of playing with numbers, the game will offer you to play with images for kids convenient with suitable experience for them, and there are also multiple groups of images that you can play with by your own choice.
 
-- The player can choose easy, meduim and hard defficulity, with different time sets.
+- Two levels included, level one as **4x4** grid and **9x9** as level two.
+- The player can choose the easy, medium, and hard difficulty, with different time sets.
 
-- The player profile is saved as data session in the browser.
+- The player profile is saved as a data session in the browser.
 
 ---
 
