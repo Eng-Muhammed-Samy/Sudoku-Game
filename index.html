@@ -1,75 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOGIN</title>
-    <link rel="stylesheet" href="./CSS/login.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="wrapper">
-        <div class="title"><span>Welcome</span></div>
 
-        <form id="form" action="#" method="get" onsubmit="selectLevel()" >
-          <div class="row">
-            <label for="username ">User Name </label>
-            <input  id="username" type="text" placeholder="Name" required>
-          </div>
-          <div class="row">
-              <label for="levels">Select Level</label>
-              <select id="levels">
-                <option value="1">Level 1</option>
-                <option value="2">Level 2</option>
-              </select>
-          </div>
-          <div class="row button">
-            <input type="submit" value="Login" onclick="storeToCookie()">
-          </div>
-         
-        </form>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sudoku</title>
+	<link rel="shortcut icon" href="images/images_groups/icon.png" type="image/x-icon" />
+	<!-- icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="./CSS/login.css">
+</head>
 
+<body>
+	<main id="particles-js">
 
-      </div>
-    </div>
+		<div class="container">
+			<div class="wrapper">
+				<div class="title">
+					<h1 class="title1">
+						Sudoku
+					</h1>
+				</div>
 
+				<form id="form" method="get" action="HTML/selectGroup.html" >
+					<div class="row">
+						<label for="username"> <i class="fa fa-user"></i>User Name </label>
+						<input id="username" type="text" placeholder="Name" name="username" required>
+					</div>
+					<div class="row">
+						<label for="levels">Select Level</label>
+						<div class="select">
+							<select id="levels" name="level">
+								<option value="4">Level 1</option>
+								<option value="9">Level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="row button">
+						<input type="submit" value="Login" id="login" onclick="setSession()">
+					</div>
 
-
-<script>
-
-
-function storeToCookie() { 
-
-    let userName = document.getElementsByTagName("input")[0].value;
-    let level_num = document.getElementById("levels").value;
-    let date = new Date()
-    date.setFullYear(date.getFullYear() + 1);
-    document.cookie = "userName=" + userName + ";expires=" + date.toGMTString();  
-    document.cookie = "level=" + level_num + ";expires=" + date.toGMTString();  
-
-}
+				</form>
 
 
+			</div>
+		</div>
+	</main>
 
-function selectLevel(){
-
-  let select = document.getElementById('levels').value;
-
-   if (select == 1 )
-      document.getElementById('form').action="HTML/test1.html";
-  else
-    document.getElementById('form').action="HTML/test2.html";
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+	<script src="js/login.js"></script>
 
 
-}
+</body>
 
-
-
-
-
-</script>
-
-
-  </body>
 </html>

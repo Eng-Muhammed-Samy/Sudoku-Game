@@ -2,27 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Potta One", cursive;
 }
-
-/* .container {
+main {
   height: 100vh;
-} */
-
-/* Table grid */
-
-#Grid {
-  padding: 10px;
-  border-spacing: 1;
-  transition: all 0.5s;
-  border-collapse: separate;
-  border-spacing: 10px 5px;
-  align-items: center;
-  /* box-shadow: 5px 5px 200px rgb(155, 1, 14); */
-  border: 2px red;
-  border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.342);
 }
+<<<<<<< HEAD:CSS/soduku4.css
 
 td {
   border: 1px solid rgb(255, 255, 255);
@@ -140,15 +124,23 @@ img {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+=======
+body {
+  font-family: "Potta One", cursive;
+>>>>>>> main:CSS/mainGame.css
 }
 
 /*start nav*/
 
+#game-difficulty {
+  width: 100%;
+  font-size: 20px;
+}
 nav {
-  background-image: linear-gradient(70deg, rgba(58, 11, 11, 0.651), red);
+  background-image: linear-gradient(40deg, #d38cff, #6272fc);
   color: white;
   width: 100%;
-  box-shadow: 5px 2px 30px rgba(20, 4, 233, 0.822);
+  box-shadow: 5px 2px rgba(0, 0, 0, 0.14);
   margin-bottom: 20px;
 }
 .nav-container {
@@ -162,7 +154,6 @@ nav {
 
 .nav-logo {
   font-size: 2rem;
-  margin-bottom: 10px;
 }
 
 .user-loginname {
@@ -180,7 +171,125 @@ a {
   font-size: 20px;
 }
 
-/* info div style */
+/*end nav*/
+
+.game-box {
+  margin-top: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.game {
+  border-radius: 5px;
+}
+
+.status {
+  margin-left: 50px;
+  border: 0px;
+}
+
+/* table grid style*/
+
+.puzzle-grid,
+.puzzle-grid2 {
+  padding: 10px;
+  border-spacing: 1;
+  transition: all 0.5s;
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+  align-items: center;
+  background-image: url("../images/bg_grid.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+.images {
+  display: flex;
+  flex-direction: column;
+}
+td {
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  text-align: center;
+  vertical-align: middle;
+  width: 57px;
+  height: 57px;
+  border-radius: 10px;
+  margin: 1px;
+  background-color: rgba(179, 175, 241, 0.35);
+}
+.puzzle-grid2 td {
+  width: 67px;
+  height: 67px;
+}
+.puzzle-grid tr:nth-child(3n) td {
+  border-bottom: 4px solid #5d4092;
+}
+
+.puzzle-grid tr:nth-child(3n + 1) td {
+  border-top: 4px solid #5d4092;
+}
+
+.puzzle-grid td:nth-child(3n) {
+  border-right: 4px solid #5d4092;
+}
+
+.puzzle-grid td:nth-child(3n + 1) {
+  border-left: 4px solid #5d4092;
+}
+.puzzle-grid2 tr:nth-child(2n) td {
+  border-bottom: 4px solid #5d4092;
+}
+
+.puzzle-grid2 tr:nth-child(2n + 1) td {
+  border-top: 4px solid #5d4092;
+}
+
+.puzzle-grid2 td:nth-child(2n) {
+  border-right: 4px solid #5d4092;
+}
+
+.puzzle-grid2 td:nth-child(2n + 1) {
+  border-left: 4px solid #5d4092;
+}
+/*images list style*/
+
+.images li {
+  display: block;
+  width: 57px;
+  height: 57px;
+  border-radius: 10px;
+  margin: 1.5px;
+  position: relative;
+  cursor: pointer;
+}
+.images li div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(65, 65, 122, 0.44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  border-radius: 10px;
+}
+.images li div p {
+  border-radius: 10px;
+}
+.images li:nth-child(3n) {
+  margin-bottom: 6px;
+}
+/* info div style*/
 
 .game-status {
   list-style-type: none;
@@ -195,108 +304,101 @@ a {
 }
 
 .game-status .start-game {
-  margin-top: 20px;
   text-align: right;
 }
 
-#btn-hide {
-  display: unset;
-}
-
-@keyframes backgroundColorPalette {
-  0% {
-    background: red;
-  }
-  25% {
-    background: blue;
-  }
-  50% {
-    background: red;
-  }
-  75% {
-    background: blue;
-  }
-  100% {
-    background: red;
-  }
-}
-
-.game-status .start-game span {
+.game-status .start-game .btn-start {
   margin: 0px;
   display: flex;
   padding: 10px 20px;
   font-size: 1.4rem;
-  font-family: bold;
-  font-family: "Potta One", cursive;
+  font-family: bolder;
+  font-family: "Monaco";
+  border: none;
+  outline: none;
   color: #ffff;
-  border-radius: 15px;
-  /* background-image: linear-gradient(40deg, black, red); */
-  /* box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px,
+  border-radius: 20px;
+  background-image: linear-gradient(40deg, #d38cff, #6272fc);
+  box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.5) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.65) 0px -2px 6px 0px inset; */
+    rgba(10, 37, 64, 0.65) 0px -2px 6px 0px inset;
   cursor: pointer;
   transform: scale(0.8);
   transition: all 0.2s ease-out;
-  animation-name: backgroundColorPalette;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+}
+.err {
+  background-color: red;
+  color: white;
 }
 
-.game-status .start-game span:hover {
-  /* background-image: linear-gradient(30deg, red, black); */
+.game-status .start-game .btn-start:hover {
+  background-image: linear-gradient(30deg, #f5b6b3, #6272fc);
   font-size: 1.4rem;
   transform: scale(0.9);
-  /* transition-duration: 1s ease-out; */
-  /* box-shadow: #030557 0px 25px 35px -13px; */
+  transition-duration: 1s ease-out;
+  box-shadow: #030557 0px 25px 35px -13px;
   border-radius: 15px;
   color: #ffffeb;
   border: 0.1px #6e0175;
-  -webkit-tap-highlight-color: transparent;
-  animation-play-state: paused;
 }
 
-.vertical-adjust span {
+.vertical-adjust .btn-start {
   line-height: 20px;
   display: inline-block;
   vertical-align: middle;
-  color: rgba(9, 13, 247);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 i {
-  color: #405392;
+  color: #5d4092;
   font-size: 10px;
 }
 
 .div-val {
-  color: #fa0000;
+  color: #5d4092;
   font-size: 28px;
   padding: 4px;
-  margin-left: 35px;
+  width: 100px;
 }
 
-#timer {
-  margin-left: 22px;
+/*active class to selected td*/
+
+td.active {
+  box-shadow: 0px 9px 6px -6px rgb(255, 255, 255),
+    9px 0px 6px -6px rgb(255, 255, 255);
+  cursor: pointer;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  transform: scaleZ(6);
+  transform: scaleX(1.2);
+  transform: scaleY(1.2);
+  background-color: rgba(64, 60, 112, 0.35);
 }
 
-/* Media query */
+/*image style */
 
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 @media (max-width: 1000px) {
-  .imagesSection li,
+  .images li,
   td {
     width: 50px;
     height: 50px;
   }
-  .gameContainer {
+  .game-box {
     flex-direction: column-reverse;
     margin-top: 0;
     margin-bottom: 0;
   }
-  .imagesSection {
+  .images {
     flex-direction: row;
     padding: 0 10px;
   }
-  .imagesSection li:nth-child(2n) {
+  .images li:nth-child(3n) {
     margin-right: 5px;
   }
 
@@ -308,26 +410,24 @@ i {
   .div-val {
     font-size: 18px;
   }
-
   .game-status li {
     font-size: 15px;
   }
 }
-
 @media (max-width: 720px) {
-  .imagesSection li,
+  .images li,
   td {
     width: 45px;
     height: 45px;
   }
-  .gameContainer {
+  .game-box {
     flex-direction: column-reverse;
   }
-  .imagesSection {
+  .images {
     flex-direction: row;
     padding: 0 10px;
   }
-  .imagesSection li:nth-child(2n) {
+  .images li:nth-child(3n) {
     margin-right: 5px;
   }
   .status {
@@ -343,20 +443,20 @@ i {
   }
 }
 
-@media (max-width: 650px) {
-  .imagesSection li,
+@media (max-width: 650) {
+  .images li,
   td {
     width: 40px;
     height: 40px;
   }
-  .gameContainer {
+  .game-box {
     flex-direction: column-reverse;
   }
-  .imagesSection {
+  .images {
     flex-direction: row;
     padding: 0 10px;
   }
-  .imagesSection li:nth-child(2n) {
+  .images li:nth-child(3n) {
     margin-right: 5px;
   }
   .status {
@@ -369,5 +469,37 @@ i {
   }
   .game-status li {
     font-size: 15px;
+  }
+}
+
+.cell-err {
+  animation: zoom-out-shake 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoom-out-shake {
+  0% {
+    transform: scale(2);
+  }
+  25% {
+    transform: scale(2) rotate(30deg);
+  }
+  50% {
+    transform: scale(2) rotate(-30deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation: zoom-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -10,14 +10,13 @@
 
 This project is a simple Sudoku game, that was developed by using mainly Javascript, HTML5, and CSS3 tools.
 
-The main goal is to make a Sudoku game for kids with the main rules of the original Sudoku game profile:
+The main goal is to make a Sudoku game for kids with the main rule of original Sudoku.
 
 - Instead of playing with numbers, the game will offer you to play with images for kids convenient with suitable experience for them, and there are also multiple groups of images that you can play with by your own choice.
 
-- Two levels included, level one as **4x4** grid and **9x9** as level two.
-- The player can choose the easy, medium, and hard difficulty, with different time sets.
+- The player can choose easy, meduim and hard defficulity, with different time sets.
 
-- The player profile is saved as a data session in the browser.
+- The player profile is saved as data session in the browser.
 
 ---
 
