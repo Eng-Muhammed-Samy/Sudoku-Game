@@ -24,7 +24,7 @@ const generateGroup = (num, path) => {
     arrayOfElement[i] = document.createElement("img");
     arrayOfElement[i].setAttribute(
       "src",
-      `../images/page2Images/${path}/${i + 1}.png`
+      `../images/images_groups/${path}/${i + 1}.png`
     );
     arrayOfElement[i].classList.add("img");
   }
